@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "dimensions",
+  "version": "${version}",
+
+  "name": "Dimensions",
+  "description": "",
+  "authors": [
+    "Adrian Casares",
+    "Malcolm Roalson",
+    "Caty Tarrant"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "gpl-3.0",
+  "icon": "assets/dimensions/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.adrwas.dimensions.Dimensions"
+    ]
+  },
+  "mixins": [
+
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
