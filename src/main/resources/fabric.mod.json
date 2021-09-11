@@ -25,7 +25,7 @@
     ]
   },
   "mixins": [
-
+    "dimensions.mixins.json"
   ],
 
   "depends": {
@@ -35,5 +35,7 @@
   },
   "suggests": {
     "another-mod": "*"
-  }
+  },
+
+  "accessWidener" : "dimensions.accesswidener"
 }
