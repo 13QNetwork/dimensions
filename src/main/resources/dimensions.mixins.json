@@ -4,9 +4,11 @@
   "package": "dev.adrwas.dimensions.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "GeneratorTypeAccessor"
+    "GeneratorTypeAccessor",
+    "PlayerJoinMixin"
   ],
   "client": [
+
   ],
   "injectors": {
     "defaultRequire": 1
