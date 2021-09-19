@@ -2,6 +2,7 @@ package dev.adrwas.dimensions.mixin;
 
 import com.google.common.collect.Lists;
 import dev.adrwas.dimensions.Dimensions;
+import dev.adrwas.dimensions.bucket.BucketData;
 import dev.adrwas.dimensions.bucket.BucketStorageManager;
 import dev.adrwas.dimensions.character.Character;
 import dev.adrwas.dimensions.character.DungeonsPlayer;
@@ -26,17 +27,18 @@ public class PlayerJoinMixin {
     private void onPlayerJoin(ClientConnection connection, ServerPlayerEntity player, CallbackInfo info) {
         System.out.println(player.getUuid() + " " + player.getName());
         UUID uuid = player.getUuid();
+        BucketData data = Dimensions.getBucketData(player.server);
 
-        Dimensions.getBucketData(player.server).getDungeonsPlayers().keySet().forEach(key -> {
+        data.getDungeonsPlayers().keySet().forEach(key -> {
             System.out.println(key.toString());
         });
 
 
-        if(Dimensions.getBucketData(player.server).getDungeonsPlayers().containsKey(uuid)) {
+        if(data.getDungeonsPlayers().containsKey(uuid)) {
             System.out.println("Player already in data!");
         } else {
             System.out.println("Player NOT already in data!");
-            Character character = new Character(uuid, "john", new ArrayList<>());
+            Character character = new Character(uuid, "john", new ArrayList<>(), data);
 
             Dimensions.getBucketData(player.server).getDungeonsPlayers().put(
                 uuid,

@@ -10,6 +10,7 @@ import net.minecraft.server.MinecraftServer;
 import org.apache.logging.log4j.core.jmx.Server;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Dimensions implements ModInitializer {
 
